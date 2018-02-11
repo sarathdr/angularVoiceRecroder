@@ -1,0 +1,29 @@
+<p class="title">Click the icon to start recording</p>
+<svg
+  [attr.width]="boxSize"
+  [attr.height]="boxSize"
+  (click)="toggleRecording($event)">
+
+  <path
+    [attr.fill]="strokeColor"
+    [attr.d]="circleM+ circleL+ circleA+ '0 ' + arcSweep + circleEnd + 'Z'"
+   />
+
+  <circle
+    [attr.cx]="centerX"
+    [attr.cy]="centerY"
+    [attr.fill]="fillColor"
+    [attr.stroke]="strokeColor"
+    [attr.r]="innerRadius"
+    [attr.stroke-width]="strokeWidth"
+  />
+
+  <image
+    [attr.x]="centerX - 34"
+    [attr.y]="(boxSize/2) - 56"
+    [attr.href]="icon"
+    width="68" height="112" />
+</svg>
+
+<button (click)="play()">Play</button>
+<button (stop)="stop()">Stop</button>

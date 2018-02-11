@@ -3,16 +3,20 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-
+import { RecorderComponent } from './recorder/recorder.component';
+import { RecordService } from './recorder/record.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RecorderComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    RecordService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
